@@ -13,6 +13,7 @@ import pyprobml_utils as pml
 def gauss_plot2d(mu, sigma, plot_options):
     plt.scatter(mu[0], mu[1],marker="x", c=plot_options['color'])
     plt.plot(*cov_to_pts(sigma)+mu.reshape(2,1), '-o',c=plot_options['color'], markersize=0.1)
+    plt.axis('square')
 
 def cov_to_pts( cov ):
     """helper function to get covariance interval for plotting, this can likely be included in the utils folder"""
